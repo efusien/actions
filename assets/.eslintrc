@@ -7,7 +7,6 @@
     "jest/globals": true
   },
   "rules": {
-    "babel/semi": ["warn"],
     "dot-notation": ["error", { "allowKeywords": true }],
     "unicode-bom": "off",
     "func-names": "off",
@@ -49,13 +48,7 @@
     "ecmaVersion": 7,
     "sourceType": "module"
   },
-  "parser": "babel-eslint",
-  "plugins": [
-    "babel",
-    "react",
-    "react-hooks",
-    "jest"
-  ],
+  "plugins": [],
   "settings": {
     "react": {
       "createClass": "createClass",
