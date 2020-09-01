@@ -19,12 +19,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pwd
           cd ./assets
           yarn install
 
       - name: Lint
         run: |
-          pwd
           cd ./assets
-          yarn eslint
+          eslint
