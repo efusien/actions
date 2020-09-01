@@ -27,4 +27,4 @@ jobs:
         run: |
           pwd
           cd ./assets
-          yarn lint
+          yarn eslint
