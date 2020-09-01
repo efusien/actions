@@ -1,0 +1,70 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb", "plugin:jest/recommended"],
+  "env": {
+    "browser": true,
+    "jquery": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "babel/semi": ["warn"],
+    "dot-notation": ["error", { "allowKeywords": true }],
+    "unicode-bom": "off",
+    "func-names": "off",
+    "guard-for-in": "off",
+    "linebreak-style": ["off"],
+    "max-len": ["warn", 200, {
+      "ignoreComments": true,
+      "ignoreTrailingComments": true,
+      "ignoreUrls": true
+    }],
+    "new-cap": ["error", { "capIsNewExceptions": ["Intercom"]}],
+    "no-mixed-operators": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-restricted-imports": ["error", { "patterns": ["../../*"] }],
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": ["warn", {
+      "allowShortCircuit": true,
+      "allowTernary": true
+    }],
+    "object-curly-newline": "off",
+    "one-var": ["warn", "never"],
+    "one-var-declaration-per-line": ["warn", "always"],
+    "quotes": ["error", "single"],
+    "react/destructuring-assignment": "off",
+    "react/forbid-prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "space-before-function-paren": "off",
+    "vars-on-top": "off",
+    "compat/compat": "off",
+    "react/no-danger": ["error"]
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "modules": true,
+      "jsx": true
+    },
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "babel",
+    "react",
+    "react-hooks",
+    "jest"
+  ],
+  "settings": {
+    "react": {
+      "createClass": "createClass",
+      "pragma": "React",
+      "version": "16.8"
+    },
+    "import/resolver": {
+      "webpack": {}
+    }
+  }
+}
+
