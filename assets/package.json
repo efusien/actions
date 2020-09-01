@@ -7,9 +7,6 @@
   "dependencies": {
     "lodash": "~4.17.0"
   },
-  "scripts": {
-    "eslint": "eslint ./assets --cache"
-  },
   "devDependencies": {
     "eslint": "~5.9.0"
   },
