@@ -29,14 +29,9 @@
     "one-var": ["warn", "never"],
     "one-var-declaration-per-line": ["warn", "always"],
     "quotes": ["error", "single"],
-    "react/destructuring-assignment": "off",
-    "react/forbid-prop-types": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
     "space-before-function-paren": "off",
     "vars-on-top": "off",
-    "compat/compat": "off",
-    "react/no-danger": ["error"]
+    "compat/compat": "off"
   },
   "parserOptions": {
     "ecmaFeatures": {
@@ -45,17 +40,6 @@
     },
     "ecmaVersion": 7,
     "sourceType": "module"
-  },
-  "plugins": [],
-  "settings": {
-    "react": {
-      "createClass": "createClass",
-      "pragma": "React",
-      "version": "16.8"
-    },
-    "import/resolver": {
-      "webpack": {}
-    }
   }
 }
 
