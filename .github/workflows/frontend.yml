@@ -34,5 +34,4 @@ jobs:
       - name: Lint
         run: |
           array=(${{ steps.file_changes.outputs.files }})
-          matchingFiles=${array[@]/*assets/src/main/*/}
-          echo matchingFiles
+          echo ${array[@]/*assets/src/main/*/}
