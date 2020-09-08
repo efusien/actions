@@ -33,5 +33,7 @@ jobs:
       
       - name: Lint
         run: |
-          matchingFiles = ${(M)${{ steps.file_changes.outputs.files }}:#$~assets/src/main/*}
+          array=(${{ steps.file_changes.outputs.files }})
+          pattern='assets/src/main/**'
+          matchingFiles = ${(M)array:#$~pattern}
           echo matchingFiles
