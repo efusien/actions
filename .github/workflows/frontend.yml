@@ -33,5 +33,4 @@ jobs:
       
       - name: Lint
         run: |
-          array=(${{ steps.file_changes.outputs.files }})
-          echo ${(M)array:#$~assets\/src\/main\/}
+          echo ${{ steps.file_changes.outputs.files }} | tr ' ' '\n' | grep assets/src/main/
