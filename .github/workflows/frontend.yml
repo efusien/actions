@@ -31,7 +31,6 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           output: ' '
       
-      - name: test
+      - name: Lint
         run: |
-          pwd
-          echo '${{ steps.file_changes.outputs.files}}'
+          echo '${{ steps.file_changes.outputs.files.split(" ").filter(path => path.startsWith("assets/src/main/")).join(" ") }}'
