@@ -11,34 +11,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # ~~~ CACHING ~~~
-        # The following is just to do caching of yarn and eslint, it's not necessary to get linting to work
-        # I would recommend first trying without
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache action
-        uses: actions/cache@v2
-        id: yarn-cache 
-        with:
-          path: |
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
-            ./.eslintcache
-          key: ${{ runner.os }}-yarn-lint-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-lint-
-
-       # ~~~ END CACHING ~~~
-
+      
       - name: Setup Node
         uses: actions/setup-node@v2-beta
         with:
           node-version: "8"
 
       - name: Install dependencies
-        run: yarn install
+        run: |
+          cd assets
+          yarn install
 
-      - name: Lint
-        run: yarn lint
+      - name: changed files
+      - id: file_changes
+        uses: trilom/file-changes-action@v1.2.4
+        with:
+          githubToken: ${{ secrets.BOT_TOKEN }}
+          output: ' '
+      
+      - name: test
+        run: |
+          pwd
+          echo '${{ steps.file_changes.outputs.files}}'
