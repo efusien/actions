@@ -33,5 +33,5 @@ jobs:
       
       - name: Lint
         run: |
-          matchingFiles = ${(M)${{ secrets.GITHUB_TOKEN }}:#$~assets/src/main/*}
+          matchingFiles = ${(M)${{ steps.file_changes.outputs.files }}:#$~assets/src/main/*}
           echo matchingFiles
