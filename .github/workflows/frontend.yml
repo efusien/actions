@@ -23,7 +23,7 @@ jobs:
           yarn install
 
       - name: changed files
-      - id: file_changes
+        id: file_changes
         uses: trilom/file-changes-action@v1.2.4
         with:
           githubToken: ${{ secrets.BOT_TOKEN }}
