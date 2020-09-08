@@ -33,4 +33,6 @@ jobs:
       
       - name: Lint
         run: |
-          echo '${{ steps.file_changes.outputs.files.split(" ").filter(path => path.startsWith("assets/src/main/")).join(" ") }}'
+          pattern = 'assets/src/main/*'
+          matchingFiles = ${(M)${{ secrets.GITHUB_TOKEN }}:#$~pattern}
+          echo matchingFiles
