@@ -4,7 +4,7 @@ class Any extends React.Component {
 
   constructor(props) {
     super(props);
-
+    console.log('any');
     this.state = {
       message: 'Hello world',
     };

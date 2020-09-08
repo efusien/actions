@@ -1,0 +1,28 @@
+{
+  "extends": "plugin:compat/recommended",
+  "env": {
+    "browser": true,
+    "jquery": true,
+    "es6": false
+  },
+  "globals": {
+    "jQuery": true,
+    "$": true,
+    "_": true,
+    "moment": true,
+    "test": true,
+    "expect": true,
+  },
+  "plugins": ["compat"],
+  "rules": {
+    "compat/compat": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.jsx", "*.test.jsx"],
+      "rules": {
+        "compat/compat": "off"
+      }
+    }
+  ]
+}
