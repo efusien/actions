@@ -33,4 +33,5 @@ jobs:
       
       - name: Lint
         run: |
-          echo ${{ steps.file_changes.outputs.files }} | tr ' ' '\n' | grep assets/src/main/
+          filesToLint=${{ steps.file_changes.outputs.files }} | tr ' ' '\n' | grep assets/src/main/ | tr '\n' ' '
+          yarn eslint $filesToLint --config=assets/src/main/.eslintrc
