@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: "8"
 
-      - name: Install dependencies
-        run: |
-          cd assets
-          yarn install
+      #- name: Install dependencies
+        #run: |
+          #cd assets
+          #yarn install
 
       - name: changed files
         id: file_changes
@@ -33,7 +33,6 @@ jobs:
       
       - name: Lint
         run: |
-          cd assets/src/main
+          cd assets
           pwd
-          echo '${{ steps.file_changes.outputs.files }}' | grep -oP '(?<=assets/src/main/)\S+' | xargs | tr '\n' ' '
-          yarn eslint '${{ steps.file_changes.outputs.files }}' | grep -oP '(?<=assets/src/main/)\S+' | xargs | tr '\n' ' '
+          echo ${{ steps.file_changes.outputs.files }}
