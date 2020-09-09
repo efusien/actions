@@ -33,8 +33,8 @@ jobs:
       
       - name: Lint
         run: |
-          cd assets
+          cd assets/src/main
           pwd
-          filesToLint=${{ steps.file_changes.outputs.files }} | tr ' ' '\n' | grep assets/src/main/ | tr '\n' ' ' | tr ' ' 'assets/'
+          filesToLint=${{ steps.file_changes.outputs.files }} | grep -oP '(?<=assets/src/main/)\S+' | xargs | tr '\n' ' '
           echo $filesToLint
-          yarn eslint $filesToLint --config=src/main/.eslintrc
+          yarn eslint $filesToLint
