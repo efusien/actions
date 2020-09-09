@@ -35,6 +35,6 @@ jobs:
         run: |
           cd assets/src/main
           pwd
-          filesToLint=${{ steps.file_changes.outputs.files }} | grep -oP '(?<=assets/src/main/)\S+' | xargs | tr '\n' ' '
+          filesToLint='${{ steps.file_changes.outputs.files }}' | grep -oP '(?<=assets/src/main/)\S+' | xargs | tr '\n' ' '
           echo $filesToLint
           #yarn eslint $filesToLint
