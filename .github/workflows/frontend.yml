@@ -14,15 +14,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Setup Node
-        uses: actions/setup-node@v2-beta
-        with:
-          node-version: "8"
+      #- name: Setup Node
+        #uses: actions/setup-node@v2-beta
+        #with:
+          #node-version: "8"
 
-      - name: Install dependencies
-        run: |
-          cd assets
-          yarn install
+      #- name: Install dependencies
+        #run: |
+          #cd assets
+          #yarn install
 
       - name: changed files
         id: file_changes
@@ -37,4 +37,4 @@ jobs:
           pwd
           filesToLint=${{ steps.file_changes.outputs.files }} | grep -oP '(?<=assets/src/main/)\S+' | xargs | tr '\n' ' '
           echo $filesToLint
-          yarn eslint $filesToLint
+          #yarn eslint $filesToLint
